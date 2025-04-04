@@ -1,0 +1,15 @@
+04/23/2024;wewe;DAILY;ewew;0
+06/20/2024;Cumpleamos Ingrid;WEEKLY;ingrid.romie@gmail.com;1
+06/02/2024;Baby Shower Ingrid;MONTHLY;ingrid.arrascue@gmail.com;1
+06/02/2024;Fiesta de Promoción Ingrid;WEEKLY;ingrid.ro@gmail.com;1
+06/25/2024;xcsds;DAILY;sdsd;1
+06/05/2024;ingrid;DAILY;asas;1
+06/12/2024;zxzxzxz;DAILY;zxzxz;0
+06/23/2024;cumpleaños gianny;DAILY;gianny.romie@gmail.com;1
+06/23/2024;boda 2024;DAILY;gianny@gmail.com;0
+06/23/2024;concierto;DAILY;gianny@gmail.com;0
+06/23/2024;concierto 2;DAILY;gianny@gmail.com;0
+06/23/2024;wewew;DAILY;ewewew;0
+03/10/2024;sasa;MONTHLY;asasa;1
+10/17/2024;Cumpleaños;DAILY;gianny.romie@gmail.com;1
+05/23/2025;gianny;DAILY;gianny.romie@gmail.com;109/20/0236;Jejej;DAILY;peepo;1
