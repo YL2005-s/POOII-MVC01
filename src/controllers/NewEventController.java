@@ -3,8 +3,8 @@ package controllers;
 import javax.swing.JOptionPane;
 
 import core.Controller;
+import models.NewEventModel;
 import models.SchedulerEvent;
-import models.SchedulerIO;
 import views.EventListView;
 import views.NewEventView;
 
@@ -42,9 +42,9 @@ public class NewEventController extends Controller {
         metadata[4] = event.getAlarm() ? "ON" : "OFF";
 
         try {
-            SchedulerIO schedulerIO = new SchedulerIO();
-            schedulerIO.attach(newEventView);
-            schedulerIO.saveEvent(event); //MODEL
+            NewEventModel newEventModel = new NewEventModel();
+            newEventModel.attach(newEventView);
+            newEventModel.saveEvent(event); //MODEL
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "ERROR", e.getMessage(), JOptionPane.ERROR_MESSAGE);
         }

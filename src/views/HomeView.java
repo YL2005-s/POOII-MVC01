@@ -5,9 +5,7 @@ import java.awt.Dimension;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JTabbedPane;
+import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
 import controllers.HomeController;
@@ -30,7 +28,7 @@ public class HomeView extends JPanel implements View
     private final HomeController homeController;
     private final JFrame mainFrame;
     private final static int MAIN_FRAME_WIDTH = 800;
-    private final static int MAIN_FRAME_HEIGHT = 350;
+    private final static int MAIN_FRAME_HEIGHT = 400;
     private final static int MAIN_FRAME_X = 100;
     private final static int MAIN_FRAME_Y = 100;
 
@@ -88,13 +86,14 @@ public class HomeView extends JPanel implements View
         JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
         tabbedPane.addTab("New event", homeController.getNewEventView());
         tabbedPane.addTab("Event list", homeController.getEventListView());
+        tabbedPane.addTab("Registrar invitado", homeController.getGuestView());
+        add(tabbedPane, BorderLayout.CENTER);
+
         tabbedPane.addChangeListener(e -> {
-            int tabbedIndex = tabbedPane.getSelectedIndex();
-            String tabbedTitle = tabbedPane.getTitleAt(tabbedIndex);
-            if ("Event list".equals(tabbedTitle)) {
-                homeController.getEventListController().reloadTable();
+            if(tabbedPane.getSelectedIndex() == 1)
+            {
+                homeController.listEvents();
             }
         });
-        add(tabbedPane, BorderLayout.CENTER);
     }
 }

@@ -11,7 +11,7 @@ import core.Model;
 import core.View;
 
 
-public class SchedulerIO implements Model
+public class EventListModel implements Model
 {
     //-----------------------------------------------------------------------
     //		Attributes
@@ -21,10 +21,6 @@ public class SchedulerIO implements Model
     private final List<View> views = new ArrayList<>();
     private String notice;
 
-
-    //-----------------------------------------------------------------------
-    //		Methods
-    //-----------------------------------------------------------------------
     @Override
     public void attach(View view)
     {
@@ -42,28 +38,6 @@ public class SchedulerIO implements Model
     {
         for (View v : views) {
             v.update(this, notice);
-        }
-    }
-
-    /**
-     * Saves a {@link SchedulerEvent} in disk in {@link #DIRECTORY}.{@link #FILE}.
-     *
-     * @param event {@link SchedulerEvent Event} to be saved
-     * @throws Exception If it can't save the event
-     */
-    public void saveEvent(SchedulerEvent event) throws Exception
-    {
-        try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter(new File(DIRECTORY, FILE), true));
-            writer.write(event.toString(), 0, event.toString().length());
-            writer.newLine();
-            writer.close();
-        } catch (FileNotFoundException fnfe) {
-            notice = "File not found";
-            notifyViews();
-        } catch (Exception ex) {
-            notice = "Error while writing the file";
-            notifyViews();
         }
     }
 
@@ -97,11 +71,9 @@ public class SchedulerIO implements Model
             notice = "File not found";
             notifyViews();
         } catch (Exception ex) {
-            ex.printStackTrace();
             notice = "There was a problem reading the event file";
             notifyViews();
         }
-
         return response;
     }
 }

@@ -13,7 +13,6 @@ public class SchedulerEvent
     private Frequency frequency;
     private boolean alarm;
 
-
     //-----------------------------------------------------------------------
     //		Methods
     //-----------------------------------------------------------------------

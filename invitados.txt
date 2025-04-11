@@ -1,0 +1,5 @@
+Ronald Borda;960960752;Masculino;Sun Jan 01 22:10:39 PET 1950;
+RonaldBorda;960960524;Masculino;Fri Jul 05 22:11:07 PET 2002;Su casa
+Ronald Borda;942847193;Masculino;Sun Apr 06 22:13:13 PET 2003;SuCasa 178
+RonaldBorda;321321321;Masculino;Sat Apr 01 22:16:41 PET 2023;1942;false
+;;Femenino;Sun Jan 01 22:24:06 PET 1950;

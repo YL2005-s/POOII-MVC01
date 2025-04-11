@@ -1,7 +1,7 @@
 package controllers;
 
 import core.Controller;
-import models.SchedulerIO;
+import models.EventListModel;
 import views.EventListView;
 
 import javax.swing.*;
@@ -16,8 +16,6 @@ public class EventListController extends Controller
     private EventListView eventListView;
     private JTable table;
 
-    private Vector<Vector<Object>> guestList; // // EN memoria
-
     //-----------------------------------------------------------------------
     //		Methods
     //-----------------------------------------------------------------------
@@ -29,24 +27,13 @@ public class EventListController extends Controller
     }
 
     /**
-     * Adds a new row in a {@link JTable} with the values informed.
+     * Update the table with the last row in a {@link JTable} with the values informed.
      *
-     * @param values Values to be add in {@link JTable}
      */
-    public void addNewRow(Object[] values)
-    {
-        ((DefaultTableModel) table.getModel()).addRow(values);
-    }
 
-    public void reloadTable()
+    public void getEventList()
     {
-        Vector<Vector<Object>> data = getDataColumns();
-        DefaultTableModel model = (DefaultTableModel) table.getModel();
-        model.setRowCount(0);
-
-        for (Vector<Object> row : data) {
-            addNewRow(row.toArray());
-        }
+        ((DefaultTableModel) table.getModel()).addRow(getDataColumns().lastElement());
     }
 
     //-----------------------------------------------------------------------
@@ -91,9 +78,9 @@ public class EventListController extends Controller
         Vector<Vector<Object>> dataColumns = null;
 
         try {
-            SchedulerIO schedulerIO = new SchedulerIO();
-            schedulerIO.attach(eventListView);
-            dataColumns = schedulerIO.getEvents();
+            EventListModel eventListModel = new EventListModel();
+            eventListModel.attach(eventListView);
+            dataColumns = eventListModel.getEvents();
         } catch (Exception ex) { }
 
         return dataColumns;
