@@ -161,7 +161,7 @@ public class GuestView extends JPanel implements View
         add(cb_day);
 
         // Months
-        String[] months = {"Jan", "Feb", "Mar", "Apr", "May", "Han",
+        String[] months = {"Jan", "Feb", "Mar", "Apr", "May", "Jun",
                 "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
         cb_month = new JComboBox<>(months);
         cb_month.setBounds(225, 148, 60, 20);

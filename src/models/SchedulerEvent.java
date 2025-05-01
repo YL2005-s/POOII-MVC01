@@ -26,6 +26,16 @@ public class SchedulerEvent
                 + (getAlarm() == true ? "1" : "0");
     }
 
+    public String getDescription()
+    {
+        SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
+
+        return "Fecha: " + sdf.format(this.date) + "\n"
+                + "Descripción: " + getEventDesc() + "\n"
+                + "Frecuencia: " + getFrequency() + "\n"
+                + "Email de reenvío: " + getFwdEmail() + "\n"
+                + "Alarma: " + (getAlarm() ? "Activada" : "Desactivada");
+    }
 
     //-----------------------------------------------------------------------
     //		Getters & Setters

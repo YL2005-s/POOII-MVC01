@@ -73,7 +73,6 @@ public class HomeView extends JPanel implements View
         mainFrame.setBounds(MAIN_FRAME_X, MAIN_FRAME_Y, MAIN_FRAME_WIDTH, MAIN_FRAME_HEIGHT);
         mainFrame.setMinimumSize(new Dimension(MAIN_FRAME_WIDTH, MAIN_FRAME_HEIGHT));
 
-
         setBorder(new EmptyBorder(5, 5, 5, 5));
         setLayout(new BorderLayout(0, 0));
     }
@@ -86,12 +85,13 @@ public class HomeView extends JPanel implements View
         JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
         tabbedPane.addTab("New event", homeController.getNewEventView());
         tabbedPane.addTab("Event list", homeController.getEventListView());
+        tabbedPane.addTab("Remove Event", homeController.getRemoveEventView());
         tabbedPane.addTab("Registrar invitado", homeController.getGuestView());
+        tabbedPane.add("Buscar evento", homeController.getEventSearchView());
         add(tabbedPane, BorderLayout.CENTER);
 
         tabbedPane.addChangeListener(e -> {
-            if(tabbedPane.getSelectedIndex() == 1)
-            {
+            if (tabbedPane.getSelectedIndex() == 1) {
                 homeController.listEvents();
             }
         });

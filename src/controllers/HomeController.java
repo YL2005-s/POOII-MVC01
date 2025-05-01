@@ -1,10 +1,7 @@
 package controllers;
 
 import core.Controller;
-import views.EventListView;
-import views.GuestView;
-import views.HomeView;
-import views.NewEventView;
+import views.*;
 
 
 /**
@@ -13,7 +10,9 @@ import views.NewEventView;
 public class HomeController extends Controller {
     private final EventListController eventListController = new EventListController();
     private final NewEventController newEventController = new NewEventController();
+    private final RemoveEventController removeEventController = new RemoveEventController();
     private final GuestController guestController = new GuestController();
+    private final EventSearchController eventSearchController = new EventSearchController();
 
     //-----------------------------------------------------------------------
     //		Methods
@@ -23,7 +22,9 @@ public class HomeController extends Controller {
         // Initializes others controllers
         eventListController.run();
         newEventController.run();
+        removeEventController.run();
         guestController.run();
+        eventSearchController.run();
 
         // Initializes HomeView
         //-----------------------------------------------------------------------
@@ -48,12 +49,19 @@ public class HomeController extends Controller {
         return eventListController.getView();
     }
 
+    public RemoveEventView getRemoveEventView() {
+        return removeEventController.getView();
+    }
+
     public GuestView getGuestView() {
         return guestController.getView();
     }
 
-    public void listEvents()
-    {
+    public EventSearchView getEventSearchView() {
+        return eventSearchController.getView();
+    }
+
+    public void listEvents() {
         eventListController.getEventList();
     }
 
